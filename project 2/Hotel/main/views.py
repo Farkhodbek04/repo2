@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Hotels
 
 def main(request):
 
@@ -13,8 +14,10 @@ def contact(request):
     return render(request, 'contact.html')
 
 def hotel(request):
+    hotels = Hotels.objects.all()
+    
 
-    return render(request, 'hotel.html')
+    return render(request, 'hotel.html', {'hotels':hotels})
 
 def services(request):
 

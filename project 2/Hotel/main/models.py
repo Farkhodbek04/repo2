@@ -1,7 +1,7 @@
 from django.db import models
 
 class Hotels(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(upload_to="hotels")
     title = models.CharField(max_length = 45)
     description = models.CharField(max_length = 255)
 
@@ -9,7 +9,7 @@ class Hotels(models.Model):
         verbose_name_plural = 'Hotels'
 
 class Facilities(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(upload_to='facilities')
     title = models.CharField(max_length = 45)
     status = models.CharField(max_length = 25)
 
